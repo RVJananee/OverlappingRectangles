@@ -1,0 +1,54 @@
+<!-- <form>
+    <div class="form-group row">
+        <label for="txtCoordinates" class="col-sm-2 col-form-label"> Enter Coordinates for rectangle </label>
+        <div class="col-sm-3">
+            <textarea class="form-control" id="txtCoordinates" rows="3"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <button type="submit" class="btn btn-primary" (click)="calculate()">Calculate!</button>
+    </div>
+</form> -->
+
+<!-- Default form contact -->
+<div class="col-6 p-5 co-ordinates">
+    <p class="h4 mb-4">Calculate number of overlapping rectangles and print area of all rectangles</p>
+  
+    <!-- Message -->
+    <div class="form-group">
+        <textarea class="form-control rounded-0" [(ngModel)]="input" id="exampleFormControlTextarea2" rows="3" placeholder="Input(top,left,bottom,right) -comma seperated"></textarea>
+        <div class="alert alert-danger font-weight-bold" *ngIf="isRequired">
+            *Required
+        </div>
+    </div>
+        
+    <!-- Send button -->
+    <button class="btn btn-primary mb-4"  color="info" block="true" (click)="calculate()">Calculate</button>
+    <ng-container>
+        <div class="container">
+            <h5>Results</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sequence</th>
+                        <th>Area</th>
+                        <th>OverlappingCount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rectangle of rectangles">
+                        <td>{{rectangle.sequenceNumber}}</td>
+                        <td>{{rectangle.area}}</td>
+                        <td>{{rectangle.overlappingCount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+    
+    
+</div>
+    
+
+  <!-- Default form contact -->
